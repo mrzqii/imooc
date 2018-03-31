@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    body,a,ul,li{
+        margin: 0;
+        padding: 0;
+    }
+    a{
+        display: block;
+        text-decoration: none;
+        outline: none;
+    }
+    li{
+        list-style: none;
+    }
+    body{
+        background-color: #eee;
+    }
+
+    .panel{
+        width: 514px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    #btn{
+
+    }
+    .box{
+       
+        display: none;
+        background: #fefefe;
+        border: 1px solid #222;
+    }
+    .box .tips{
+        text-align: center;
+    }
+    .imgWrapper{
+        box-sizing: border-box
+    }
+    .imgWrapper li{
+        box-sizing: border-box;
+        width: 64px;
+        height: 64px;
+        display: inline-block;
+        border: 1px solid #eee;
+    }
+    .imgWrapper li:hover{
+        border: 1px solid rgb(19, 233, 37);
+      
+    }
+
+</style>
+<body>
+    <div class="panel">
+        <a href="javascript:;" id="btn" >表情</a>
+        <div class="box">
+            <div class="tips">还在加载中，稍后。。。。</div>
+            <!-- <ul class="imgWrapper">
+                <li><img src="images/dailaohu/01[1].gif" alt=""></li>
+            </ul> -->
+        </div>
+    </div>
+    <script src="./jquery-3.js"></script>
+    <script src="./preLoad.js"></script>
+    <script>
+
+        var imgs = []
+        for(var i=0;i<40;i++){
+            var j=i+1
+            if(i<9){
+                imgs[i] = "images/dailaohu/0" + j + "[1].gif"
+            }else{
+                imgs[i] = "images/dailaohu/" + j + "[1].gif"
+            }
+           
+        }
+        $('#btn').on('click',function(){
+            $('.box').show();
+            new preload(imgs, {
+                all: function () {
+                    var html = '';
+                    var len = imgs.length;
+                    html = html + '<ul class="imgWrapper">';
+                    for (var i = 0; i < len; i++) {
+                        html += '<li><img src="' + imgs[i] + '" alt=""></li>'
+                    }
+                    html = html + '</ul>';
+                    setTimeout(() => {
+                        $('.box').html(html)
+                    }, 1000);
+
+
+                }
+            })
+
+        })
+        
+        
+        
+    </script>
+</body>
+</html>

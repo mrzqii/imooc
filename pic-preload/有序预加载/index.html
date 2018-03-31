@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+    .box{
+        width: 1200px;
+        height: 800px;
+        margin: 0 auto;
+        border: 1px solid #eee;
+    }
+
+    .img{
+        width: 982px;
+        height: 491px;
+        margin: 0 auto;
+        background-color: #ddd;
+        margin-bottom: 40px;
+    }
+    .btns{
+        width: 500px;
+        height: 200px;
+        margin: 0 auto;
+        text-align: center;
+
+    }
+    .btns span{
+        display: inline-block;
+        width: 30px;
+        height: 20px;
+        background: #666;
+        border: 1px solid #222;
+    }
+ 
+</style>
+<body>
+    <div class="box">
+        <div class="img">
+            <img src="" alt="">
+        </div>
+        <div class="btns">
+            <span class="prev">前</span>
+            <span class="next">后</span>
+        </div>
+    </div>
+
+   
+    <script src="./jquery-3.js"></script>
+    <script src="./preLoad.js"></script>
+    
+    <script>
+        $(function () {
+            var imgs = [
+                "https://assets-cdn.github.com/images/modules/site/stories/developers/yyx990803.png",
+                "https://assets-cdn.github.com/images/modules/site/stories/developers/jessfraz.png",
+                "https://assets-cdn.github.com/images/modules/site/home-illo-team.svg",
+                "https://assets-cdn.github.com/images/modules/site/stories/customers/mailchimp.png"
+            ];
+            
+            changeImg(imgs);
+
+            // 调用插件，需要传入图片数组，和配置参数
+            
+            new preload(imgs,{
+                // 这里根据需要可以配置参数
+                order: 'order'
+            })
+        })
+
+        // 有序加载
+        // var count = 0;
+        // function load(imgs){
+        //     var imgObj = new Image(),
+        //         len = imgs.length;
+        //     $(imgObj).on('load error', function(){
+        //         if(count>len-1){
+        //             //当图片加载完了该做什么
+        //         }else{
+        //            load(imgs) 
+        //         }
+        //         count ++
+        //     })
+
+        //     imgObj.src = imgs[count]
+        // }
+        
+        //切换图片
+        function changeImg(imgs) {
+            var num = 0,
+                len = imgs.length;
+            $(".img img").attr("src", imgs[num])
+  
+            $('.btns span').on('click', function (params) {
+                if ($(this).hasClass('prev')) {
+                    num = Math.max(0, --num)
+                } else {
+                    num = Math.min(len - 1, ++num)
+                }
+                document.title = (num + 1) + '/' + len
+                $(".img img").attr("src", imgs[num])
+            })
+        }
+    </script>
+</body>
+</html>
