@@ -42,7 +42,7 @@ input[type=date]{
 }
 .add-task input[type=text]{
     float: left;
-    width: 84%;
+    width: 77%;
     margin-right: 1%;
     height: 40px;
     background-color: #c6dff7;
@@ -50,9 +50,12 @@ input[type=date]{
 }
 .add-task button[type=submit]{
     float: right;
-    width: 15%;
+    width: 22%;
     height: 40px;
     background-color: #4ca1f1;
+}
+@media screen and (max-width:1280px){
+    font-size: 
 }
 .add-task button[type=submit]:hover{
      
@@ -87,12 +90,20 @@ input[type=date]{
     float: right
 }
 .task-list .task-item .task-content{
+    float: left;
+    width: 60%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     padding-left: 20px;
     font-size: 16px;
     color: #666;
 
 }
 
+.task-list .task-item .task-check{
+    float: left;
+}
 .task-list .task-item:hover,
 .add-task input[type=text]:hover{
     background-color: #c6dff7;
@@ -240,5 +251,6 @@ input[type="checkbox"]:checked + label:before{
 
 
 }
+
 
 

@@ -7,6 +7,7 @@
         $taskDetail = $('.task-detail'),
         
         $del,
+        msgAudio = document.getElementById('msgAudio'),
 
         $checkBox;
 
@@ -138,7 +139,7 @@
     function taskListTmp(data, index){
         var taskItem = 
         `<div class="task-item${(data.complete)? ' completed': ''}" data-index=${index}>
-                <span><input type="checkbox" ${(data.complete)? 'checked': ''} name="" class="check-box" id="check${index}"><label for="check${index}"></label></span>
+                <span class="task-check"><input type="checkbox" ${(data.complete)? 'checked': ''} name="" class="check-box" id="check${index}"><label for="check${index}"></label></span>
                 <span class="task-content">${data.content}</span>
                 <span class="btn">
                     <span class='del'>删除</span>
@@ -257,6 +258,7 @@ function bindDetail(){
             taskListArr[index].date = $('.form-detail [name=date]').val();
            
             store.set('taskList', taskListArr)
+            updateTask(index, {completeRemind:false})
             // console.log($('.form-detail #newContent').val());
             
             detailNone()
@@ -305,6 +307,8 @@ function rederDetail(index){
         var time = setInterval(function(){
             for(var i=0;i<taskListArr.length;i++){
               
+                console.log('taskListArr:',taskListArr);
+                
                 
                 // item = get(i)
                 if(!taskListArr[i].date || taskListArr[i].completeRemind ||taskListArr[i].complete){
@@ -313,12 +317,13 @@ function rederDetail(index){
                 currentTime = (new Date()).getTime()
                 remindTime = (new Date(taskListArr[i].date)).getTime();
 
-                // console.log('currentTime:',currentTime);
-                // console.log('remindTime:',remindTime);
+                
                 
                 if(currentTime-remindTime>=1){
                     popRemind(taskListArr[i].content);
                     updateTask(i, {completeRemind:true})
+                    msgAudio.play()
+                    // $('.msg-audio').play()
     
                 }
     
