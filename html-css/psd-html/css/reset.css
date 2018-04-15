@@ -1,0 +1,22 @@
+html,body,h3,h4,h5,ul,li,p{
+    margin: 0;
+    padding: 0;
+}
+a{
+    display: block;
+    text-decoration: none;
+    color: #7c7c7c;
+}
+ul{
+    list-style: none;
+}
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden
+}
+.clearfix {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
