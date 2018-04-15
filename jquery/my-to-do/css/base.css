@@ -9,6 +9,11 @@ textarea{
     -webkit-appearance: none;
     -webkit-tap-highlight-color:transparent
 }
+input[type='text']:focus{
+    border: 1px solid #F76333;
+     
+    background:#FFEDE7;
+}
 /* 实现了在手机端禁止粘贴复制的功能 */
 *{   
     -webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
@@ -73,9 +78,7 @@ input[type=date]{
     height: 40px;
     background-color: #4ca1f1;
 }
-@media screen and (max-width:1280px){
-    font-size: 
-}
+ 
 .add-task button[type=submit]:hover{
      
     background-color: #28668e;
