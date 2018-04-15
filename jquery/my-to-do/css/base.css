@@ -2,6 +2,25 @@
     box-sizing: border-box;
     transition: background-color 0.3s;
 }
+
+input[type='text'],
+input[type='checkbox'],
+textarea{
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color:transparent
+}
+/* 实现了在手机端禁止粘贴复制的功能 */
+*{   
+    -webkit-touch-callout:none;  /*系统默认菜单被禁用*/   
+    -webkit-user-select:none; /*webkit浏览器*/   
+    -khtml-user-select:none; /*早期浏览器*/   
+    -moz-user-select:none;/*火狐*/   
+    -ms-user-select:none; /*IE10*/   
+    user-select:none;   
+}  
+input {      
+    -webkit-user-select:auto; /*webkit浏览器*/     
+} 
 body{
     background-color: #68ADED;
 }
