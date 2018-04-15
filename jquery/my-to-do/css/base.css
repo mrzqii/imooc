@@ -23,7 +23,7 @@ input[type='text']:focus{
     -ms-user-select:none; /*IE10*/   
     user-select:none;   
 }  
-input {      
+input,textarea {      
     -webkit-user-select:auto; /*webkit浏览器*/     
 } 
 body{
