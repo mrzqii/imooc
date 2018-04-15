@@ -1,0 +1,244 @@
+*{
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+body{
+    background-color: #68ADED;
+}
+.clearfix::after,.clearfix::before{
+    content:" ";
+    display:table;
+}   
+.clearfix::after{
+    clear:both;
+}
+
+.container{
+    position: relative;
+    max-width: 900px;
+    /* height: 300px; */
+    padding: 0 20px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.container h1{
+    text-align: center;
+}
+input[type=text],
+button[type=submit],
+input[type=date]{
+    border: none;
+    outline: none;
+    padding: 5px;
+    background: #c6dff7;
+    /* border-radius: 3px;
+    box-shadow: 1px 2px 3px #666; */
+    
+}
+.add-task{
+    overflow: hidden;
+    margin: 10px 0;
+}
+.add-task input[type=text]{
+    float: left;
+    width: 84%;
+    margin-right: 1%;
+    height: 40px;
+    background-color: #c6dff7;
+    text-indent: 20px;
+}
+.add-task button[type=submit]{
+    float: right;
+    width: 15%;
+    height: 40px;
+    background-color: #4ca1f1;
+}
+.add-task button[type=submit]:hover{
+     
+    background-color: #28668e;
+}
+.task-list{
+    background: #fff;
+}
+.task-list .task-item{
+    overflow: hidden;
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 3px;
+    line-height: 40px;
+    /* background-color: #eee; */
+    /* margin-bottom: 3px; */
+    border-bottom: 1px solid #eee;
+    color: #666;
+    font-size: 18px;
+}
+.task-list .task-item.completed{
+    opacity: 0.5;
+}
+.task-list .task-item.completed:after{
+    content: "";
+    display: block;
+    width: 95%;
+    height: 1px;
+    background-color: #888;
+    position: relative;
+    top: -18px;
+    float: right
+}
+.task-list .task-item .task-content{
+    padding-left: 20px;
+    font-size: 16px;
+    color: #666;
+
+}
+
+.task-list .task-item:hover,
+.add-task input[type=text]:hover{
+    background-color: #c6dff7;
+}
+.task-detail-mask{
+    display: none;
+    position: fixed;
+    left: 0;right: 0;
+    top: 0;bottom: 0;
+    background-color: rgba(0, 0, 0, .6)
+}
+
+
+.task-detail{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    padding: 10px;
+    background-color: #fefefe;
+}
+.task-detail .content{
+    padding: 10px;
+    color: #333;
+    font-size: 20px
+}
+.task-detail .desc textarea{
+    outline: none;
+    text-indent: 5px;
+    width: 100%;
+    height: 100px;
+    background-color: #c6dff7;
+    /* border-radius: 3px; */
+    border: none;
+    padding: 10px;
+    
+}
+.remind input[type=date]{
+    display: block;
+    width: 100%;
+    background-color: #c6dff7;
+    margin-bottom: 10px;
+}
+
+.btn{
+    float: right;
+}
+.btn span{
+    color: #333;
+    padding: 3px;
+    cursor: pointer;
+    background: #4ca1f1
+}
+.form-detail .content{
+    width: 100%;
+    background-color: #c6dff7;
+    color: #666;
+    font-size: 16px;
+}
+.form-detail .contentB{
+    display: none;
+}
+.form-detail .contentB input{
+    width: 100%;
+}
+.form-detail .desc {
+    margin: 10px 0;
+}
+.form-detail [type=submit]{
+    float: right;
+    background-color: #3784B5;
+
+}
+.msg{
+    display: none;
+    /* background: #eee; */
+    text-align: center;
+    
+}
+.msg-box{
+    padding-top: 1px;
+    display: inline-block;
+    /* border: 1px solid #ddd; */
+    padding: 20px;
+    background: #5260ad;
+    color: #f7f9f9;
+}
+.msg p{
+    text-align: center;
+}
+.msg-box .msg-tips{
+    /* background: #eee; */
+}
+.msg-box .msg-content{
+    background: #0216238a;
+    padding: 10px 10px;
+}
+.msg p.msg-btn span{
+    background: #4ca1f1;
+    padding: 5px;
+}
+
+.remind-title{
+    color: #666;
+    font-size: 16px;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+label{
+    color: #666;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    font-size: 13px;
+    /* 设置文字不被选中 */
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+/* //要点2： 设置label的伪元素内容为空 */
+label::before{
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: -4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    /* background-color: #eee; */
+    border: 1px solid #333;
+
+}
+/* //要点3： 设置被选中的input的兄弟元素label的伪元素内容为\2713 */
+input[type="checkbox"]:checked + label:before{
+    content: "\2713";
+    text-align: center;
+    line-height: 13px;
+    background: #3a92e4;
+    color: #fff;
+
+
+}
+
+

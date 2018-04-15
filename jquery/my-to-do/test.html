@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+
+    .loginremeb{
+			margin-left: 50px;
+		}
+/* //要点1： 把原来的设置为display: none */
+		input[type=checkbox]{
+			display: none;
+		}
+
+		label{
+			color: #666;
+			display: inline-block;
+			cursor: pointer;
+			position: relative;
+			font-size: 13px;
+			/* 设置文字不被选中 */
+			-webkit-user-select:none;
+			-moz-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+		}
+		/* //要点2： 设置label的伪元素内容为空 */
+		label::before{
+			content: "";
+			position: absolute;
+			top: 3px;
+   			left: -24px;
+			width: 13px;
+			height: 13px;
+			border-radius: 3px;
+			background-color: #888;
+			border: 1px solid #333;
+
+		}
+/* //要点3： 设置被选中的input的兄弟元素label的伪元素内容为\2713 */
+		input[type="checkbox"]:checked + label:before{
+			content: "\2713";
+			text-align: center;
+			line-height: 13px;
+			background: #7da9d6;
+
+		}
+</style>
+<body>
+        <div class="loginremeb">
+                <input type="checkbox" name="" id="rememberPwd" value="222">
+                <label for="rememberPwd">记住密码</label>
+            </div>
+            <div class="loginremeb">
+                    <input type="checkbox" name="" id="rememberPwd" value="222">
+                    <label for="rememberPwd">记住密码</label>
+                </div>
+                <div class="loginremeb">
+                        <input type="checkbox" name="" id="rememberPwd" value="222">
+                        <label for="rememberPwd">记住密码</label>
+                    </div>
+</body>
+</html>

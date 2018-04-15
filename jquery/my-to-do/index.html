@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MY-TO-DO-LIST</title>
+    <link rel="stylesheet" href="node_modules/normalize.css//normalize.css">
+    
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+
+<body>
+    
+    <div class="container">
+        
+        <h1>TO-DO</h1>
+        <form class="add-task">
+            <input type="text" autocomplete="off" name="content" id="taskContent">
+            <button type="submit" id="sbt">SUBMIT</button>
+        </form>
+        <div class="task-list" id="taskList">
+            <!-- <div class="task-item">
+                <span><input type="checkbox" name="" id=""></span>
+                <span class="task-content">item content1</span>
+                <span class="btn">
+                    <span>删除</span>
+                    <span>detail</span>
+                </span>
+            </div> -->
+             
+        </div>
+        <div class="task-detail-mask"></div>
+        <div class="task-detail">
+            <!-- <form action="" class="form-detail">
+                <div class="content">Jint yaopqufsfsf</div>
+                <div>
+                    <div class="desc">
+                        <textarea name="" id="" cols="30" rows="10">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="remind">
+                    <input type="date" name="" id="">
+                </div>
+                <button type="submit">更新</button>
+            </form> -->
+            
+        </div>
+        <div class="msg clearfix">
+            <div class="msg-box clearfix">
+                <p class="msg-tips">兄die：你这个任务还没有完成：</p>
+            	<p class="msg-content"></p>
+            	<p class="msg-btn"><span>晓得了！！</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/Sortable.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/store/dist/store.legacy.min.js"></script>
+    
+    
+    <script src="js/base.js"></script>
+</body>
+    <link rel="stylesheet" href="node_modules/jquery-datetimepicker//jquery.datetimepicker.css">
+    <script src="node_modules/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+    <script>
+        
+    </script>
+</html>
