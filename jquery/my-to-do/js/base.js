@@ -1,4 +1,4 @@
-(function ($) {
+(function ($,$z) {
 
     var $addTask = $('.add-task'),
 
@@ -142,8 +142,8 @@
                 <span class="task-check"><input type="checkbox" ${(data.complete)? 'checked': ''} name="" class="check-box" id="check${index}"><label for="check${index}"></label></span>
                 <span class="task-content">${data.content}</span>
                 <span class="btn">
-                    <span class='del'>删除</span>
-                    <span class='detail'>详情</span>
+                    <span class='del class'>删除</span>
+                    <span class='detail class'>详情</span>
                 </span>
             </div>`;
         return taskItem
@@ -344,4 +344,4 @@ function rederDetail(index){
        
    }
 
-})(jQuery);
+})(jQuery,Zepto);

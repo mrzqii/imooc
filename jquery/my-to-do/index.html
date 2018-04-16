@@ -21,7 +21,7 @@
         
         <h1>TO-DO</h1>
         <form class="add-task">
-            <input type="text" autocomplete="off" name="content" id="taskContent" placeholder="输入任务撒">
+            <input type="text" autocomplete="off" name="content" id="taskContent" placeholder="输入任务撒" class="class">
             <button type="submit" id="sbt">SUBMIT</button>
         </form>
         <div class="task-list" id="taskList">
@@ -56,12 +56,14 @@
             <div class="msg-box clearfix">
                 <p class="msg-tips">兄die：你这个任务还没有完成：</p>
             	<p class="msg-content"></p>
-            	<p class="msg-btn"><span>晓得了！！</span></p>
+            	<p class="msg-btn"><span class="class">晓得了！！</span></p>
             </div>
         </div>
     </div>
     
     <script src="./js/Sortable.min.js"></script>
+    <script src="./js/zepto.js"></script>
+    <script src="./js/zepto-tap.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/store/dist/store.legacy.min.js"></script>
     

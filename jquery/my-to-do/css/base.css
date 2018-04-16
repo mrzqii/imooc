@@ -5,6 +5,7 @@
 
 input[type='text'],
 input[type='checkbox'],
+span.deatal,
 textarea{
     -webkit-appearance: none;
     -webkit-tap-highlight-color:transparent
@@ -13,6 +14,13 @@ input[type='text']:focus{
     border: 1px solid #F76333;
      
     background:#FFEDE7;
+}
+html.body{
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+.class{
+    -webkit-tap-highlight-color: transparent;
 }
 /* 实现了在手机端禁止粘贴复制的功能 */
 *{   
