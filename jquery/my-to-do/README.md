@@ -13,5 +13,4 @@
 11. datetimepicker的使用
   
 
-在线演示：https://mrzqii.github.io/studystudy/jquery/my-to-do/  
-github地址：https://github.com/mrzqii/studystudy/tree/master/jquery/my-to-do
+[在线演示：](https://mrzqii.github.io/study-use-jquery/jquery/my-to-do/)
